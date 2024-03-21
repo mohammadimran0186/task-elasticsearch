@@ -1,11 +1,15 @@
 version: "3.7"
 services:
+#this is the elastic search service i have taken this as elasticsearch01 we can give any name 
   elasticsearch01:
     image: "elasticsearchimage"
+# providing container name avoids random container names.
     container_name: elasticsearch
+# default ports used by elastic search    
     ports:
       - "9200:9200"
       - "9300:9300"
+#adding volumes to local host to avoid data loss because containers are stateless      
     volumes:
       - "elasticstorage01:/usr/share/elasticsearch/data"
 volumes:

@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  elasticsearch01:
+    image: "elasticsearchimage"
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - "elasticstorage01:/usr/share/elasticsearch/data"
+volumes:
+  elasticstorage01:        
